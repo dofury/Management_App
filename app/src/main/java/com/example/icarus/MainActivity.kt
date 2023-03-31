@@ -10,6 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.icarus.databinding.ActivityMainBinding
+import com.example.icarus.dialog.AddMemberDialog
+import com.example.icarus.dto.Member
+import com.example.icarus.util.MyApplication
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,10 +31,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

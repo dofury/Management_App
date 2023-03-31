@@ -21,15 +21,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/item_sign"
-                android:text="l"/>
+                android:id="@+id/item_student_id"
+                android:text="219124135"/>
             <TextView
+                android:layout_marginStart="10sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/item_money"
-                android:textSize="30sp"
+                android:id="@+id/item_name"
                 android:textColor="@color/black"
-                android:text="안녕"/>
+                android:text="차도훈"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,16 +39,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/item_type"
-                android:text="월급"/>
+                android:id="@+id/item_level"
+                android:text="멘토"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="right"
-                android:id="@+id/item_date"
-                android:text="date"/>
+                android:id="@+id/item_major"
+                android:text="컴퓨터공학과"/>
         </LinearLayout>
     </LinearLayout>
 

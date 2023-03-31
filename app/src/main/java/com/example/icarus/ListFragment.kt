@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.icarus.adapter.ListAdapter
 import com.example.icarus.databinding.FragmentListBinding
+import com.example.icarus.dialog.AddMemberDialog
 import com.example.icarus.dto.Member
+import com.example.icarus.util.MyApplication
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -18,6 +21,9 @@ import com.example.icarus.dto.Member
 class ListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
+    private var _mainActivity: MainActivity? = null
+    private var _adapter: ListAdapter? = null
+    private var members: MutableList<Member>? = mutableListOf()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,6 +35,7 @@ class ListFragment : Fragment() {
     ): View? {
 
         _binding = FragmentListBinding.inflate(inflater, container, false)
+        _mainActivity = activity as MainActivity?
         return binding.root
 
     }
@@ -36,12 +43,28 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val members: MutableList<Member> = mutableListOf()
-        members.add(Member(0,"","","","","","",""))
-        binding.rcvList.adapter = ListAdapter(members)
-        binding.rcvList.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
+        init()
+
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+
+            val dialog = AddMemberDialog(_mainActivity!!,this,_adapter!!)
+            dialog.show()
+/*            val member = Member(0,"","","","","","","","","")
+            MyApplication.db.addMember(member)*/
+        }
 
     }
+
+    fun init(){
+        members = MyApplication.db.allMembers
+        _adapter = ListAdapter(members!!,activity as MainActivity,this)
+        binding.rcvList.adapter = _adapter
+        binding.rcvList.layoutManager = createLayoutManager()
+        binding.rcvList.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

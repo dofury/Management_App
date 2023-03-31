@@ -1,12 +1,19 @@
 package com.example.icarus.dto
 
 data class Member(
-    val uid: Int,
-    val studentId: String,
-    val name: String,
-    val gender: String,
-    val phoneNumber: String,
-    val grade: String,
-    val major: String,
-    val team: String
-)
+    var uid: Int,
+    var studentId: String,
+    var name: String,
+    var gender: String,
+    var age: Int,
+    var phoneNumber: String,
+    var grade: String,
+    var campus: String,
+    var major: String,
+    var field: String,
+    var level: String,
+    var team: String
+
+){
+    constructor() : this (0,"","","",0,"","","","","","","")
+}
