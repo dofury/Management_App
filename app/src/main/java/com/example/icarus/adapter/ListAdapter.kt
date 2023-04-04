@@ -3,6 +3,7 @@ package com.example.icarus.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.icarus.ListFragment
 import com.example.icarus.MainActivity
@@ -10,7 +11,7 @@ import com.example.icarus.databinding.ListItemBinding
 import com.example.icarus.dialog.MemberPageDialog
 import com.example.icarus.dto.Member
 
-class ListAdapter(private val members: MutableList<Member>,private val mainActivity: MainActivity,private val listFragment: ListFragment) :
+class ListAdapter(private val members: MutableList<Member>,private val activity: AppCompatActivity) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         return members.size
@@ -33,7 +34,7 @@ class ListAdapter(private val members: MutableList<Member>,private val mainActiv
 
     private fun buttonEvent(holder: ListViewHolder, position: Int){
         holder.itemView.setOnClickListener(View.OnClickListener {
-            val dialog = MemberPageDialog(mainActivity,this)
+            val dialog = MemberPageDialog(activity,this)
             dialog.show(members,position)
         })
     }

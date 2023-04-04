@@ -8,6 +8,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Adapter
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.icarus.ListFragment
 import com.example.icarus.MainActivity
 import com.example.icarus.adapter.ListAdapter
@@ -18,7 +19,7 @@ import com.example.icarus.dto.Member
 import com.example.icarus.util.MyApplication
 import java.text.SimpleDateFormat
 
-class MemberPageDialog(private val mainActivity: MainActivity,private val adapter: ListAdapter): Dialog(mainActivity) {
+class MemberPageDialog(private val activity: AppCompatActivity,private val adapter: ListAdapter): Dialog(activity) {
     private lateinit var binding: DialogMemberPageBinding
 
     fun show(members: MutableList<Member>, position: Int){
@@ -28,15 +29,16 @@ class MemberPageDialog(private val mainActivity: MainActivity,private val adapte
         setContentView(binding.root)
 
         binding.tvName.text = members[position].name
-        binding.tvStudentId.text = members[position].studentId
-        binding.tvGender.text = members[position].gender
-        binding.tvAge.text = members[position].age.toString()
-        binding.tvPhoneNumber.text = members[position].phoneNumber
+        binding.etStudentId.setText(members[position].studentId)
+        binding.etGender.setText(members[position].gender)
+        binding.etAge.setText(members[position].age.toString())
+        binding.etPhoneNumber.setText(members[position].phoneNumber)
 
-        binding.tvMajor.text = members[position].major
-        binding.tvField.text = members[position].field
-        binding.tvLevel.text = members[position].level
-        binding.tvTeam.text = members[position].team
+        binding.etCampus.setText(members[position].campus)
+        binding.etMajor.setText(members[position].major)
+        binding.etField.setText(members[position].field)
+        binding.etLevel.setText(members[position].level)
+        binding.etTeam.setText(members[position].team)
 
         val sincerity = MyApplication.db.getSincerity(members[position].studentId)
         binding.tvEasyCount.text = sincerity.oneCount.toString()
@@ -67,7 +69,17 @@ class MemberPageDialog(private val mainActivity: MainActivity,private val adapte
 
         setOnDismissListener {
             if(!isDelete){//삭제된 로그가 아니라면 메모 업데이트
-                //members[position].memo = binding.evMemo.text.toString()
+                members[position].studentId = binding.etStudentId.text.toString()
+                members[position].gender= binding.etGender.text.toString()
+                members[position].age = binding.etAge.text.toString().toInt()
+                members[position].phoneNumber = binding.etPhoneNumber.text.toString()
+
+                members[position].campus = binding.etCampus.text.toString()
+                members[position].major = binding.etMajor.text.toString()
+                members[position].field = binding.etField.text.toString()
+                members[position].level = binding.etLevel.text.toString()
+                members[position].team = binding.etTeam.text.toString()
+
                 MyApplication.db.updateMember(members[position])
             }
             adapter.notifyItemChanged(position)

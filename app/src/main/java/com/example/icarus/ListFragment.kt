@@ -46,22 +46,17 @@ class ListFragment : Fragment() {
         init()
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
 
             val dialog = AddMemberDialog(_mainActivity!!,this,_adapter!!)
             dialog.show()
-/*            val member = Member(0,"","","","","","","","","")
-            MyApplication.db.addMember(member)*/
         }
 
     }
 
     fun init(){
         members = MyApplication.db.allMembers
-        _adapter = ListAdapter(members!!,activity as MainActivity,this)
+        _adapter = ListAdapter(members!!,activity as MainActivity)
         binding.rcvList.adapter = _adapter
-        binding.rcvList.layoutManager = createLayoutManager()
         binding.rcvList.addItemDecoration(DividerItemDecoration(context,LinearLayoutManager.VERTICAL))
     }
 
@@ -71,10 +66,4 @@ class ListFragment : Fragment() {
         _binding = null
     }
 
-    private fun createLayoutManager(): LinearLayoutManager {
-        val manager = LinearLayoutManager(context)
-        manager.reverseLayout = true
-        manager.stackFromEnd = true
-        return manager
-    }
 }

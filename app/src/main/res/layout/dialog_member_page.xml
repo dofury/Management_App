@@ -69,13 +69,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_student_id"
+        <EditText
+            android:id="@+id/et_student_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="219124135"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,13 +94,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_gender"
+        <EditText
+            android:id="@+id/et_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="남자"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,13 +119,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_age"
+        <EditText
+            android:id="@+id/et_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="24"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,13 +144,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_phone_number"
+        <EditText
+            android:id="@+id/et_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="010-3683-3317"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -174,13 +178,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_campus"
+        <EditText
+            android:id="@+id/et_campus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="칠암"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -198,13 +203,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_major"
+        <EditText
+            android:id="@+id/et_major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="컴퓨터공학과"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -222,13 +228,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_field"
+        <EditText
+            android:id="@+id/et_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="모바일"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -246,13 +253,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_level"
+        <EditText
+            android:id="@+id/et_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
             android:textSize="15dp"
-            android:text="멘토"/>
+            android:background="@android:color/transparent"
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -270,13 +278,14 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text=":"/>
-        <TextView
-            android:id="@+id/tv_team"
+        <EditText
+            android:id="@+id/et_team"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:background="@android:color/transparent"
             android:textSize="15dp"
-            android:text="3조"/>
+            android:text="null"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

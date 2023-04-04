@@ -159,9 +159,43 @@ class DBHelper(
             }while(cursor.moveToNext())
         }
 
+
         cursor.close()
         db.close()
         return sincerity
+
+    }
+
+    @SuppressLint("Range")
+    fun getMemberName(name: String): MutableList<Member>{
+        var members = mutableListOf<Member>()
+        val selectQueryHandler = "SELECT * FROM $TABLE_NAME1 WHERE $COL_NAME= ?"
+
+        val db = readableDatabase
+        val cursor = db.rawQuery(selectQueryHandler, arrayOf(name))
+        if(cursor.moveToFirst()){
+            do{
+                val member = Member(
+                    cursor.getInt(cursor.getColumnIndex(UID)),
+                    cursor.getString(cursor.getColumnIndex(COL_STUDENT_ID)),
+                    cursor.getString(cursor.getColumnIndex(COL_NAME)),
+                    cursor.getString(cursor.getColumnIndex(COL_GENDER)),
+                    cursor.getInt(cursor.getColumnIndex(COL_AGE)),
+                    cursor.getString(cursor.getColumnIndex(COL_PHONE_NUMBER)),
+                    cursor.getString(cursor.getColumnIndex(COL_GRADE)),
+                    cursor.getString(cursor.getColumnIndex(COL_CAMPUS)),
+                    cursor.getString(cursor.getColumnIndex(COL_MAJOR)),
+                    cursor.getString(cursor.getColumnIndex(COL_FIELD)),
+                    cursor.getString(cursor.getColumnIndex(COL_LEVEL)),
+                    cursor.getString(cursor.getColumnIndex(COL_TEAM))
+                )
+                members.add(member)
+            }while(cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+        return members
 
     }
     fun allAddMember(members: MutableList<Member>){
