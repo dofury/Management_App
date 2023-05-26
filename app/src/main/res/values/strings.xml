@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Icarus</string>
+    <string name="app_name">Purnet</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">이카루스</string>
+    <string name="first_fragment_label">푸르넷</string>
     <string name="second_fragment_label">목록</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>

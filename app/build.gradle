@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.dofury.icarus"
+        applicationId "com.dofury.purunet"
         minSdk 30
         targetSdk 33
         versionCode 1
